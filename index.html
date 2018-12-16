@@ -1,0 +1,246 @@
+<html><head><link rel="shortcut icon" href="http://www.ahprinting.com/upload/files/Lnx.png" type="image/png"> 
+
+<title>[ LNX#.CREW ]</title> 
+
+<meta content='Hacked By XpL3Z' name='description'/>
+
+<meta content='Hacked By XpL3Z' name='keywords'/>
+
+<meta content='Hacked By XpL3Z' name='Abstract'/>
+
+<meta name="title" content="~ LNX#.CREW ~">
+
+<meta name="description" content=" HACK3D! ">
+
+<meta name="keywords" content="XpL3Z ">
+
+<meta name="googlebot" content="index,follow" />
+
+<meta name="robots" content="all" />
+
+<meta name="robots schedule" content="auto" />
+
+<meta name="distribution" content="global" />
+
+<script> alert("Hacked!") </script>
+
+<script> alert("LNX#.CREW") </script>
+
+<script>
+var pesen="XpL3Z WAS HERE!";
+///////////////////////////////////
+function clickIE4(){if (event.button==2){alert(pesen);return false;}}
+function clickNS4(e){if (document.layers||document.getElementById&&!document.all){if (e.which==2||e.which==3){alert(pesen);return false;}}}
+if (document.layers){document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS4;}
+else if (document.all&&!document.getElementById){document.onmousedown=clickIE4;}
+document.oncontextmenu=new Function("alert(pesen);return false")
+</script>
+
+<link href='https://fonts.googleapis.com/css?family=Covered+By+Your+Grace' rel='stylesheet' type='text/css'>
+
+<link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two" rel="stylesheet" type='text/css'>
+
+<body oncontextmenu='return false;' onkeydown='return false;' onmousedown='return false;' bgcolor="black" > 
+
+</script>
+<script type="text/javascript">
+
+
+
+var snowmax=35
+
+var snowcolor=new Array("#AAAACC","#DDDDFF","#CCCCDD","#F3F3F3","#F0FFFF")
+
+var snowtype=new Array("Arial Black","Arial Narrow","Times","Comic Sans MS")
+
+var snowletter="*"
+
+var sinkspeed=0.6
+
+var snowmaxsize=22
+
+var snowminsize=8
+
+var snowingzone=1
+
+
+
+// Do not edit below this line
+
+var snow=new Array()
+
+var marginbottom
+
+var marginright
+
+var timer
+
+var i_snow=0
+
+var x_mv=new Array();
+
+var crds=new Array();
+
+var lftrght=new Array();
+
+var browserinfos=navigator.userAgent 
+
+var ie5=document.all&&document.getElementById&&!browserinfos.match(/Opera/)
+
+var ns6=document.getElementById&&!document.all
+
+var opera=browserinfos.match(/Opera/)  
+
+var browserok=ie5||ns6||opera
+
+
+
+function randommaker(range) {		
+
+	rand=Math.floor(range*Math.random())
+
+    return rand
+
+}
+
+
+
+function initsnow() {
+
+	if (ie5 || opera) {
+
+		marginbottom = document.body.clientHeight
+
+		marginright = document.body.clientWidth
+
+	}
+
+	else if (ns6) {
+
+		marginbottom = window.innerHeight
+
+		marginright = window.innerWidth
+
+	}
+
+	var snowsizerange=snowmaxsize-snowminsize
+
+	for (i=0;i<=snowmax;i++) {
+
+		crds[i] = 0;                      
+
+    	lftrght[i] = Math.random()*15;         
+
+    	x_mv[i] = 0.03 + Math.random()/10;
+
+		snow[i]=document.getElementById("s"+i)
+
+		snow[i].style.fontFamily=snowtype[randommaker(snowtype.length)]
+
+		snow[i].size=randommaker(snowsizerange)+snowminsize
+
+		snow[i].style.fontSize=snow[i].size
+
+		snow[i].style.color=snowcolor[randommaker(snowcolor.length)]
+
+		snow[i].sink=sinkspeed*snow[i].size/5
+
+		if (snowingzone==1) {snow[i].posx=randommaker(marginright-snow[i].size)}
+
+		if (snowingzone==2) {snow[i].posx=randommaker(marginright/2-snow[i].size)}
+
+		if (snowingzone==3) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/4}
+
+		if (snowingzone==4) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/2}
+
+		snow[i].posy=randommaker(2*marginbottom-marginbottom-2*snow[i].size)
+
+		snow[i].style.left=snow[i].posx
+
+		snow[i].style.top=snow[i].posy
+
+	}
+
+	movesnow()
+
+}
+
+
+
+function movesnow() {
+
+	for (i=0;i<=snowmax;i++) {
+
+		crds[i] += x_mv[i];
+
+		snow[i].posy+=snow[i].sink
+
+		snow[i].style.left=snow[i].posx+lftrght[i]*Math.sin(crds[i]);
+
+		snow[i].style.top=snow[i].posy
+
+		
+
+		if (snow[i].posy>=marginbottom-2*snow[i].size || parseInt(snow[i].style.left)>(marginright-3*lftrght[i])){
+
+			if (snowingzone==1) {snow[i].posx=randommaker(marginright-snow[i].size)}
+
+			if (snowingzone==2) {snow[i].posx=randommaker(marginright/2-snow[i].size)}
+
+			if (snowingzone==3) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/4}
+
+			if (snowingzone==4) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/2}
+
+			snow[i].posy=0
+
+		}
+
+	}
+
+	var timer=setTimeout("movesnow()",50)
+
+}
+
+
+
+for (i=0;i<=snowmax;i++) {
+
+	document.write("<span id='s"+i+"' style='position:absolute;top:-"+snowmaxsize+"'>"+snowletter+"</span>")
+
+}
+
+if (browserok) {
+
+	window.onload=initsnow
+
+}
+
+</script>
+
+<body bgcolor="black" oncontextmenu="return false;" onkeydown="return false;" onmousedown="return false;">
+
+<center>
+
+<div class="indonesia"><br><br>
+
+<img src="http://www.ahprinting.com/upload/files/Lnx.png" height="310px"><br><br>
+
+<font face="'Covered By Your Grace', Arial, sans-serif;" size="5px" color="#8B0000">
+
+<font face="Shadows Into Light Two" size="5px" color="red">Hacked By XpL3Z<br/></font>
+
+<font face="Shadows Into Light Two" size="4px" color="FFFFFF">No one Knows What We are Doing<br>And you Dont want Know That a Code has a lot of Meaning for Us<br>But You only think We are is Criminals<br>Who We Are ??</font><br>
+
+<font face="Shadows Into Light Two" size="3px" color="efffff3"><br> Special Thanks: <br/>
+
+<font face="Shadows Into Light Two" size="4px" color="efffff3">_-=| LOCK NULL XPLOIT |=-_
+
+<font face="Shadows Into Light Two" size="2px" color="blueocean"><br> LNX#.CREW <br/>
+
+<font face="Shadows Into Light Two" size="1px" color="blueocean">~ 3Xploit - Pku.LNX# - X-W4R30N - Amino7171 - InYourG00D - XpL3Z - DriXploit  - ./c0d3x.3rr - Vijune15 - X PL0Y - AnsBix8 ~<br/></font>
+
+</div>
+
+<iframe width="0" height="0" src="https://a.top4top.net/m_101264jef0.mp3" frameborder="0" allowfullscreen; repeat></iframe><br>
+
+<html>
